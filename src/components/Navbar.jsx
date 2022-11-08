@@ -37,32 +37,32 @@ const Navbar = () => {
                 />
               </span>
               <ul
-                className="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none left-auto right-0"
+                className="dropdown-menu min-w-max absolute  bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none left-auto right-0"
                 aria-labelledby="dropdownMenuButton2"
               >
                 <li>
-                  <a
+                  <Link
                     className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
-                    href="#"
+                    to="/register"
                   >
-                    Action
-                  </a>
+                    Register
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
-                    href="#"
+                    to="/login"
                   >
-                    Another action
-                  </a>
+                    Login
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <span
                     className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
-                    href="#"
+                    role="button"
                   >
-                    Something else here
-                  </a>
+                    Logout
+                  </span>
                 </li>
               </ul>
             </div>
