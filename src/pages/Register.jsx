@@ -1,6 +1,7 @@
 import React from "react";
 import GoogleIcon from "../assets/icons/GoogleIcon";
 import { useState } from "react";
+import { createUser } from "../auth/firebase";
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -10,6 +11,7 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    createUser(email, password);
     console.log(firstName, lastName);
   };
 
