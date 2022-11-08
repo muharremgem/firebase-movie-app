@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import avatar from "../assets/icons/avatar.png";
 
 const Navbar = () => {
+  //const currentUser = { displayName: "muharrem gem" };
+  const currentUser = false;
   return (
     <>
       <nav className=" w-full flex flex-wrap items-center justify-between py-3 bg-gray-900 text-white  shadow-lg navbar navbar-expand-lg fixed-top">
@@ -13,8 +16,11 @@ const Navbar = () => {
           {/* Collapsible wrapper */}
           {/* Right elements */}
           <div className="flex items-center relative">
+            {currentUser && (
+              <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>
+            )}
             <div className="dropdown relative">
-              <a
+              <span
                 className="dropdown-toggle flex items-center hidden-arrow"
                 href="#"
                 id="dropdownMenuButton2"
@@ -23,13 +29,13 @@ const Navbar = () => {
                 aria-expanded="false"
               >
                 <img
-                  src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+                  src={currentUser?.photoURL || avatar}
                   className="rounded-full"
                   style={{ height: 25, width: 25 }}
                   alt=""
                   loading="lazy"
                 />
-              </a>
+              </span>
               <ul
                 className="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none left-auto right-0"
                 aria-labelledby="dropdownMenuButton2"
