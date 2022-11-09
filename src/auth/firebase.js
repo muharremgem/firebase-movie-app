@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+//import { useNavigate } from "react-router-dom";
 
 //* Your web app's Firebase configuration
 const firebaseConfig = {
@@ -27,17 +28,19 @@ export const createUser = async (email, password, navigate) => {
       email,
       password
     );
-
+    navigate("/");
     console.log(userCredential);
   } catch (error) {
     console.log(error.message);
+    alert(error.message);
   }
 };
 
-export const signIn = async (email, password) => {
+export const signIn = async (email, password, navigate) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
+    navigate("/");
   } catch (error) {
-    console.log(error.message);
+    alert(error.message);
   }
 };
