@@ -3,6 +3,8 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
 //import { useNavigate } from "react-router-dom";
 
@@ -43,4 +45,18 @@ export const signIn = async (email, password, navigate) => {
   } catch (error) {
     alert(error.message);
   }
+};
+
+export const userObserver = () => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log(user);
+    } else {
+      console.log("user signed out");
+    }
+  });
+};
+
+export const logOut = () => {
+  signOut(auth);
 };
