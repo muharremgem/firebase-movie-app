@@ -4,8 +4,8 @@ import avatar from "../assets/icons/avatar.png";
 import { logOut } from "../auth/firebase";
 
 const Navbar = () => {
-  //const currentUser = { displayName: "muharrem gem" };
-  const currentUser = false;
+  const currentUser = { displayName: "muharrem gem" };
+  //const currentUser = false;
   return (
     <>
       <nav className=" w-full flex flex-wrap items-center justify-between py-3 bg-gray-900 text-white  shadow-lg navbar navbar-expand-lg fixed-top">
